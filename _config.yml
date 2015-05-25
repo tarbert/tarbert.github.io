@@ -1,0 +1,15 @@
+# Site settings
+title: Isle of Harris Car Hire
+email: info@isleofharris-carhire.com
+description: The best deal for car hire in Lewis and Harris. Family run customer focused car hire.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://isleofharris-carhire.com" # the base hostname & protocol for your site
+twitter_username: harriscarhire
+
+
+# Build settings
+markdown: kramdown
+sass:
+    sass_dir: _sass
+paginate: 5
+paginate_path: "/news/page/:num"

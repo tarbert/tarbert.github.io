@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+<header>
+    <div class="navbar-fixed">
+    {% include nav.html %}
+    </div>
+</header>
+<main class="{{ page.color }}">
+    <div class="container">
+        {{ content }}
+    </div>
+</main>
+<footer>
+      {% unless page.footer == yes %}
+    {% include footer.html %}
+      {% endunless %}
+    {% include scripts.html %}
+</footer>
+  </body>
+
+</html>

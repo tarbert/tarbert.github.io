@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body class="{{ page.color }}">
+    <div class="slider fullscreen">
+        <ul class="slides blue">
+            {% for head in page.tag_line %}
+            <li>
+                <img src="/assets/urbanBlue.png">
+                <div class="caption center-align">
+                    <h1><strong>{{ head | split:"~" | first }}</strong></h1>
+                <h4><strong>{{ head | split:"~" | last }}</strong></h4>
+                <a href="{{ site.baseurl }}/about" class="waves-effect waves-light btn-large blue lighten-2">Climb in</a>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+      </div>
+      {% include scripts.html %}
+      <script src="{{ site.baseurl }}/js/cookiechoices.js"></script>
+      <script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    cookieChoices.showCookieConsentBar('We only use cookies to to collect anonymous visitor statistics.',
+        'OK, Got it.', 'Info', '{{ site.baseurl }}/privacy');
+  });
+</script>
+  </body>
+</html>

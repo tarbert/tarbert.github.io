@@ -1,0 +1,157 @@
+---
+layout: default
+---
+<div class="row">
+    <div class="col s12">
+        <h3 class="white-text center-align"><strong>{{ page.intro }}</strong></h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 flow-text white-text">
+        {{ content }}
+    </div>
+</div>
+<div class="hide-on-med-and-up  center-align">
+    <a href="tel:00447825222020" class="btn-floating btn-large waves-effect waves-light teal"><i class="mdi-communication-call left"></i></a>
+    <p class="white-text flow-text">In a hurry? Just phone.</p>
+</div>
+<div class="hide-on-small-only  center-align">
+    <a href="tel:00447825222020" class="btn btn-large waves-effect waves-light teal"><i class="mdi-communication-call"></i>+44 (0)7825 222 020</a>
+    <p class="white-text flow-text">In a hurry? Just phone.</p>
+</div>
+
+<div class="row">
+<form class="col s12 l6 z-depth-1" action="//formspree.io/info@isleofharris-carhire.com"
+      method="POST">
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="mdi-action-account-circle prefix"></i>
+          <input name="name" type="text" class="validate">
+          <label for="name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+        <i class="mdi-communication-email prefix"></i>
+          <input name="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+
+<div class="row">
+    <div class="col s6">
+    <h6 class="white-text">Pick up point</h6>
+      <p>
+      <input class="with-gap" name="Pickup" type="radio" id="test1" value="Airport" />
+      <label for="test1" class="white-text">Stornoway Airport</label>
+    </p>
+    <p>
+      <input class="with-gap" name="Pickup" type="radio" id="test2" value="Stornoway_Ferry" />
+      <label for="test2" class="white-text">Stornoway Ferry Terminal</label>
+    </p>
+    <p>
+      <input class="with-gap" name="Pickup" type="radio" id="test3" value="Tarbert"  />
+      <label for="test3" class="white-text">Tarbert</label>
+    </p>
+      <p>
+        <input class="with-gap" name="Pickup" type="radio" id="test4" value="Leverburgh"  />
+        <label for="test4" class="white-text">Leverburgh</label>
+    </p>
+    </div>
+    <div class="col s6">
+    <h6 class="white-text">Drop off point</h6>
+
+      <p>
+      <input class="with-gap" name="Dropoff" type="radio" id="test5" value="Airport" />
+      <label for="test5" class="white-text">Stornoway Airport</label>
+    </p>
+    <p>
+      <input class="with-gap" name="Dropoff" type="radio" id="test6" value="Stornoway_Ferry" />
+      <label for="test6" class="white-text">Stornoway Ferry Terminal</label>
+    </p>
+    <p>
+      <input class="with-gap" name="Dropoff" type="radio" id="test7" value="Tarbert"  />
+      <label for="test7" class="white-text">Tarbert</label>
+    </p>
+      <p>
+        <input class="with-gap" name="Dropoff" type="radio" id="test8" value="Leverburgh"  />
+        <label for="test8" class="white-text">Leverburgh</label>
+    </p>
+    </div>
+    <div class="row"></div>
+    <div class="section">
+    <h6 class="white-text center-align">We do not charge extra to deliver your car to Stornoway or Leverburgh.</h6>
+    </div>
+</div>
+<div>
+    <label for="pickup"><h6 class="white-text">Pick up Date</h6></label>
+       <input type="date" class="datepicker" name="Hire_date">
+</div>
+<div>
+    <div class="input-field col s12">
+    <select name="Days_required">
+      <option value="" disabled selected>Select number of days</option>
+      <option value="1">Half Day</option>
+      <option value="2">1 Day</option>
+      <option value="3">2 Days</option>
+      <option value="3">3 Days</option>
+      <option value="3">4 Days</option>
+      <option value="3">5 Days</option>
+      <option value="3">6 Days</option>
+      <option value="3">More than 6 Days</option>
+    </select>
+    <label><h6 class="white-text">Hire Duration</h6></label>
+  </div>
+</div>
+    <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" name="Other info"></textarea>
+        <label for="textarea1">Any other questions?</label>
+    </div>
+    <div class="center">
+        <button class="btn waves-effect waves-light" type="submit" value="Send">Submit
+        <i class="mdi-content-send right"></i>
+        </button>
+        <input type="text" name="_gotcha" style="display:none" />
+        <input type="hidden" name="_next" value="{{ site.baseurl }}/thanks" />
+        <input type="hidden" name="_subject" value="Car hire enquiry from website" />
+    </div>
+
+</form>
+<section class="col s12 l5 offset-l1">
+    <div class="row center">
+        <div>
+            <p class="flow-text white-text">All costs are inclusive of VAT and also include delivery to, and pick up from your preferred location. </p>
+        </div>
+      <table class="bordered white-text">
+        <thead>
+          <tr>
+              <th data-field="days">No. of Days</th>
+              <th data-field="cost">Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+                {% for rate in page.rates %}
+            <td>{{ rate | split: "~" | first }}</td>
+                {% endfor %}
+          </tr>
+          <tr>
+                {% for rate in page.rates %}
+            <td>{{ rate | split: "~" | last }}</td>
+                {% endfor %}
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <div class=" center-align">
+        <p class="flow-text white-text">Need child seats? How about a cycle rack to help you explore some of our fantastic off road routes?</p>
+        <p class="flow-text white-text">Let us know when you get in touch.</p>
+    </div>
+    <div class=" center-align">
+        <p class="flow-text white-text">Please read our <a href="{{ site.baseurl }}/terms"> Terms and Conditions.</a></p>
+    </div>
+</section>
+</div>
+
+</div>

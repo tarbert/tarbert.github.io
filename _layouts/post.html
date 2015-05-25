@@ -1,0 +1,29 @@
+---
+layout: default
+
+---
+<div class="post">
+<div class="row">
+    <div class="col m8">
+  <header class="post-header">
+    <h2 class="post-title">{{ page.title }}</h2>
+    <h5>Posted on {{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</h5>
+  </header>
+
+  <article class="post-content flow-text">
+    {{ content }}
+  </article>
+    </div>
+    <div class="col m3 offset-m1">
+      <h5>Recent news</h5>
+     <ul>
+        {% for post in site.posts limit:5 %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }} - {{ post.date | date_to_string }}</a>
+            {{ post.excerpt }}
+        </li>
+        {% endfor %}
+    </ul>
+        <h5><a href="{{ site.baseurl }}/news">Older news</a></h5>
+</div>
+</div>
